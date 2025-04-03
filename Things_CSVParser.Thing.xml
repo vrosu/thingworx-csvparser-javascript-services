@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="7"
+ universal="password">
+    <Things>
+        <Thing
+         description="Javascript replacement for the most widely used CSV Parser extension services.&#xA;This entityis provided as-is and without warranty or support. &#xA;It is not part of the PTC product suite. &#xA;This entity is licensed under the terms of the MIT license."
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         inheritedValueStream=""
+         name="CSVParser.Thing"
+         projectName="PTCDefaultProject"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions></PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Parse  CSV content to an infotable"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ParseCSVFile">
+                        <ResultType
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="columnMappings"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="CSV content"
+                             name="content"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="DATASHAPENAME"
+                             description=""
+                             name="dataShape"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="dd.MM.yyyy"
+                             baseType="STRING"
+                             description="Date format"
+                             name="dateFormat"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue=","
+                             baseType="STRING"
+                             description="Field delimiter"
+                             name="fieldDelimiter"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="false"
+                             baseType="BOOLEAN"
+                             description=""
+                             name="hasHeader"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description="Latitude field index"
+                             name="latitudeField"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description="Longitude field index"
+                             name="longitudeField"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="\n"
+                             baseType="STRING"
+                             description=""
+                             name="rowDelimiter"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="&quot;"
+                             baseType="STRING"
+                             description="String value delimiter; NOT USED"
+                             name="stringDelimiter"
+                             ordinal="10"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="parseFromStringV2">
+                        <ResultType
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Must contain fields with the same name as the ones in the DataShape"
+                             name="columnMappings"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="content"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="DATASHAPENAME"
+                             description=""
+                             name="dataShape"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="dateFormat"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="fieldDelimiter"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="hasHeader"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description=""
+                             name="latitudeFieldIndex"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description=""
+                             name="longitudeFieldIndex"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="\n"
+                             baseType="STRING"
+                             description="should typically be \n or \r\n or \n\r"
+                             name="rowDelimiter"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="stringDelimiter"
+                             ordinal="5"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Read CSV content from a file stored in a File Repository to an infotable"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ReadCSVFile">
+                        <ResultType
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Must contain ALL datashape fields separated by &quot;;&quot;"
+                             name="columnMappings"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="DATASHAPENAME"
+                             description=""
+                             name="dataShape"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="dd.MM.yyyy"
+                             baseType="STRING"
+                             description="Date format"
+                             name="dateFormat"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue=","
+                             baseType="STRING"
+                             description="Field delimiter"
+                             name="fieldDelimiter"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="SystemRepository"
+                             aspect.thingTemplate="FileRepository"
+                             baseType="THINGNAME"
+                             description=""
+                             name="fileRepository"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="false"
+                             baseType="BOOLEAN"
+                             description=""
+                             name="hasHeader"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description="Latitude field index"
+                             name="latitudeField"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description="Longitude field index"
+                             name="longitudeField"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Absolute File Repository path to file"
+                             name="path"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="\n"
+                             baseType="STRING"
+                             description=""
+                             name="rowDelimiter"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="&quot;"
+                             baseType="STRING"
+                             description="String value delimiter"
+                             name="stringDelimiter"
+                             ordinal="10"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ParseCSVFile">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                          if (!dataShape) {
+                                          	throw new Error("Data Shape Must Be Specified");
+                                          }
+                                          result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape({
+                                          	infoTableName: undefined /* STRING {"defaultValue":"InfoTable"} */ ,
+                                          	dataShapeName: dataShape /* DATASHAPENAME */
+                                          });
+                                         
+                                        result = me.parseFromStringV2({
+                                        	content: content /* STRING */,
+                                        	columnMappings: columnMappings /* STRING */,
+                                        	hasHeader: hasHeader /* BOOLEAN */,
+                                        	fieldDelimiter: fieldDelimiter /* STRING */,
+                                        	stringDelimiter: stringDelimiter /* STRING */,
+                                        	latitudeFieldIndex: latitudeField /* NUMBER */,
+                                        	longitudeFieldIndex: longitudeField /* NUMBER */,
+                                        	dateFormat: dateFormat /* STRING */,
+                                        	dataShape: dataShape /* DATASHAPENAME */,
+                                        	rowDelimiter: rowDelimiter /* STRING {"defaultValue":"\\n"} */
+                                        });
+                                        
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="parseFromStringV2">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        //1. Declare and initialize variables
+                                        let mappedColumns = new Array();
+                                        let orderedDSFields = DataShapes[dataShape].GetFieldDefinitions().rows.toArray();
+                                        let nFields = orderedDSFields.length;
+                                        result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape({
+                                        	infoTableName: undefined /* STRING {"defaultValue":"InfoTable"} */ ,
+                                        	dataShapeName: dataShape /* DATASHAPENAME */
+                                        });
+                                        //2. Calculate and store the proper field indexes if the order of the columns in the CSV is different than the order of the fields in the DataShape
+                                        //2.1. Calculate the actual field names as present in the CSV; if there's a mapping, use that, otherwise the order will be derived by the order of fields in the DataShape
+                                        if (columnMappings != undefined) {
+                                        	mappedColumns = columnMappings.split(";");
+                                        } else {
+                                        	for (let i = 0; i < nFields; i++) {
+                                        		mappedColumns[i] = orderedDSFields[i].name;
+                                        	}
+                                        }
+                                        //2.2. For each of the fields in the datashape, store the actual index of the field in the CSV and the basetype of that field
+                                        let columnIndices = new Object();
+                                        let col = 0;
+                                        for (let j = 0; j < nFields; j++) {
+                                        	let colIndex = -1;
+                                        	for (col = 0; col < mappedColumns.length; col++) {
+                                        		let columnName = mappedColumns[col];
+                                        		if (columnName == orderedDSFields[j].name) {
+                                        			colIndex = col;
+                                        			break;
+                                        		}
+                                        	}
+                                        	columnIndices[orderedDSFields[j].name] = {
+                                        		index: colIndex,
+                                        		baseType: orderedDSFields[j].baseType
+                                        	};
+                                        }
+                                        //logger.warn(JSON.stringify(columnIndices));
+                                        
+                                        //3. Calculate the index of the fields storing longitude and latitude; 
+                                        let latitudeColIndex = -1;
+                                        if (latitudeFieldIndex != "") {
+                                        	latitudeColIndex = parseInt(latitudeFieldIndex);
+                                        }
+                                        let longitudeColIndex = -1;
+                                        if (longitudeFieldIndex != null) {
+                                        	longitudeColIndex = parseInt(longitudeFieldIndex);
+                                        }
+                                        //4. Sanitize the characters used for separating the field values, strings (NOT USED) and rows
+                                        fieldDelimiter = fieldDelimiter.charAt(0);
+                                        stringDelimiter = stringDelimiter.charAt(0);
+                                        rowDelimiter = rowDelimiter.replace("\\n", "\n").replace("\\r", "\r");
+                                        //5. Split the CSV content in an array, based on the row delimiter
+                                        let CSVrows = content.split(rowDelimiter);
+                                        //6. If there's a header, remove the first row
+                                        if (hasHeader)
+                                        	CSVrows.shift();
+                                        //7. For each CSV row process the row and store the values in an infotable row
+                                        CSVrows.forEach(row => {
+                                        	let newRow = new Object();
+                                        	//the order of the values might not correspond to the order of the datashapeFields (therefore we take the order from the columnMappings, if it exists)
+                                        	let rowValues = row.split(fieldDelimiter);
+                                        	//7.1. Loop through each of the datashape columns (that now contain the right indexes) and process each value according to the supported basetypes
+                                            Object.keys(columnIndices).forEach(columnName => {
+                                        		let baseType = columnIndices[columnName].baseType;
+                                        		let value = rowValues[columnIndices[columnName].index];
+                                        		switch (baseType) {
+                                        			case ("STRING"):
+                                        				newRow[columnName] = value;
+                                        				break;
+                                        			case ("NUMBER"):
+                                        				let parsedValue = parseFloat(value);
+                                        				if (!isNaN(parsedValue)) newRow[columnName] = parsedValue;
+                                        				break;
+                                        			case ("LOCATION"):
+                                        				logger.warn("Location basetype not yet implemented");
+                                        				//the code path below was not tested
+                                        				//				let location = {
+                                        				//					latitude: rowValues[latitudeFieldIndex],
+                                        				//					longitude: rowValues[longitudeFieldIndex],
+                                        				//					elevation: 0,
+                                        				//					units: "WGS84"
+                                        				//				};
+                                        				//				newRow[columnName] = location;
+                                        				break;
+                                        			case ("DATETIME"):
+                                        				if (value) {
+                                        					try {
+                                        						let dateValue = parseDate(value, dateFormat);
+                                        						newRow[columnName] = dateValue;
+                                        					} catch (err) {
+                                        						logger.warn("Date conversion error for field " + columnName + " | Error: " + err);
+                                        					}
+                                        				}
+                                        				break;
+                                        			default:
+                                        				break;
+                                        		}
+                                        	});
+                                        	result.AddRow(newRow);
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ReadCSVFile">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                          if (!fileRepository) {
+                                          	throw new Error("File Repository Must Be Specified");
+                                          }
+                                          if (!dataShape) {
+                                          	throw new Error("Data Shape Must Be Specified");
+                                          }
+                                          if (!Things[fileRepository]) {
+                                          	throw new Error("File Repository [" + fileRepository + "] Does Not Exist");
+                                          }
+                                          result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape({
+                                          	infoTableName: undefined /* STRING {"defaultValue":"InfoTable"} */ ,
+                                          	dataShapeName: dataShape /* DATASHAPENAME */
+                                          });
+                                          let CSVContent = Things[fileRepository].LoadText({
+                                        	path: path /* STRING */
+                                          });
+                                        result = me.parseFromStringV2({
+                                        	content: CSVContent /* STRING */,
+                                        	columnMappings: columnMappings /* STRING */,
+                                        	hasHeader: hasHeader /* BOOLEAN */,
+                                        	fieldDelimiter: fieldDelimiter /* STRING */,
+                                        	stringDelimiter: stringDelimiter /* STRING */,
+                                        	latitudeFieldIndex: latitudeField /* NUMBER */,
+                                        	longitudeFieldIndex: longitudeField /* NUMBER */,
+                                        	dateFormat: dateFormat /* STRING */,
+                                        	dataShape: dataShape /* DATASHAPENAME */,
+                                        	rowDelimiter: rowDelimiter /* STRING {"defaultValue":"\\n"} */
+                                        });
+                                        
+                                        //  try (final InputStreamReader inputStreamReader = new InputStreamReader(repo.openFileForRead(path))) {
+                                        //  	this.parseFromReader(inputStreamReader, it, columnMappings, hasHeader, fieldDelimiter, stringDelimiter, latitudeField, longitudeField, dateFormat);
+                                        //  } catch (Exception eOpen) {
+                                        //  	throw new InvalidRequestException("Unable To Open [" + path + "] in [" + fileRepository + "] : " + eOpen.getMessage(), RESTAPIConstants.StatusCode.STATUS_NOT_FOUND);
+                                        //  }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations></AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties></ThingProperties>
+        </Thing>
+    </Things>
+</Entities>
