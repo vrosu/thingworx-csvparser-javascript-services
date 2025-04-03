@@ -17,6 +17,8 @@ These replacements can be used in situations when importing the CSVParser Extens
  - The available basetypes that should be used in the respective DataShape are: STRING, NUMBER, LOCATION and DATETIME
  - LOCATION basetype parsing is not implemented; all location related fields are not used
 
+In case you encounter any bugs, please raise an issue here: https://github.com/vrosu/thingworx-csvparser-javascript-services/issues
+
 This entity is available as Open Source. Any  improvements can be submitted via a Pull Request, which will be analyzed and incorporated if it's deemed to be useful enough for everyone.
 Breaking changes in the existing services will not be accepted; instead add new services (eg: ParseCSVFileV2 or other names as necessary)
 
