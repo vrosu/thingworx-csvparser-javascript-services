@@ -16,3 +16,6 @@ These replacements can be used in situations when importing the CSVParser Extens
 This entity is available as Open Source. Any  improvements can be submitted via a Pull Request, which will be analyzed and incorporated if it's deemed to be useful enough for everyone.
 Breaking changes in the existing services will not be accepted; instead add new services (eg: ParseCSVFileV2 or other names as necessary)
 
+### This entity is provided as-is and without warranty or support. 
+### It is not part of the PTC product suite. 
+### This entity is licensed under the terms of the MIT license.
