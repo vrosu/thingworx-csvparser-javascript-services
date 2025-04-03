@@ -5,6 +5,10 @@ Contains ThingWorx JavaScript service replacements for the most widely used CSVP
 This repository contains a single thing which contains ThingWorx Javascript service replacements for the ReadCSVFile and ParseCSVFile services from the CSVParser extension.
 These replacements can be used in situations when importing the CSVParser Extension (implemented Java) is not allowed (eg: Windchill+ or other situations).
 
+# How to use:
+ - Download the Things_CSVParser.Thing.xml
+ - Go to ThingWorx Composer and select Import / From File / Browse and select the file downloaded above
+
 # Services:
   - **ReadCSVFile**: Read CSV content from a file stored in a File Repository to an infotable
   - **ParseCSVFile**: Parse CSV content to an infotable
